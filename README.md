@@ -1,6 +1,6 @@
 # VMWARE (MacOS to Linux shared folder script)
 Bash script to create/configure VMWare shares between Linux VM and MacOS Host machines.
-It will also create a softlink on all the user accounts home directory.
+It will also create a softlink based off user input.
 
 Create a copy of the script.
 
