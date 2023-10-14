@@ -1,5 +1,7 @@
 #!/bin/bash
+clear
 
+read -p "Where would you like to mount your shared folders?(ex: /home/user/share)" path
 # Check if running on a virtual machine
 if [[ $(dmesg | grep -i virtual) || $(systemd-detect-virt) ]]; then
     echo "This machine is a virtual machine."
@@ -17,7 +19,10 @@ if [[ $(dmesg | grep -i virtual) || $(systemd-detect-virt) ]]; then
 # syntax: ln -s <shared folders> <path to link>
     #clear
     echo "MOUNTING SHARED FOLDERS TO THE HOME DIRECTORY"
-    ln -s /mnt/hgfs/* /home/*/
+    ln -s /mnt/hgfs/* $path
+    clear
+    echo "Please check '$path' for shared folders."
 else
     echo "This machine is not a virtual machine."
 fi
+
