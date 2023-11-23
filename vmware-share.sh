@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 
-read -p "Where would you like to mount your shared folders?(ex: /home/user/share)" path
+read -p "Where would you like to mount your shared folders? (ex: /home/user/share): " path
 # Check if running on a virtual machine
 if [[ $(dmesg | grep -i virtual) || $(systemd-detect-virt) ]]; then
     echo "This machine is a virtual machine."
